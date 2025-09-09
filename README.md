@@ -1,5 +1,7 @@
----
 # Nucleus Video Connector
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17085201.svg)](https://doi.org/10.5281/zenodo.17085201)
+
 
 A blueprint for an integration application to streamline video workflows between Nucleus and an Online Video Platform (OVP). This repository provides a two-step API retrieval method for video assets and their metadata, along with potential ingestion workflows.
 
