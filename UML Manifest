@@ -1,0 +1,53 @@
+@startuml
+skinparam shadowing false
+skinparam sequenceMessageAlign center
+
+actor "Admin/Scheduler" as Admin
+participant "BAFTA Nucleus API" as NucleusAPI
+participant "Integration Application\n(e.g., Python Script)" as IntegrationApp
+participant "Vimeo API" as VimeoAPI
+
+Admin -> IntegrationApp : Trigger asset sync
+activate IntegrationApp
+
+IntegrationApp -> NucleusAPI : 1. Request new/updated assets & metadata
+activate NucleusAPI
+NucleusAPI --> IntegrationApp : 2. Provide asset details (metadata, file URL)
+deactivate NucleusAPI
+
+loop For each identified asset
+    IntegrationApp -> IntegrationApp : 3. Map Nucleus metadata to Vimeo format
+
+    alt Ingestion Method
+        opt **Option A: Push via TUS Upload**
+            IntegrationApp -> NucleusAPI : 4a. Download asset file
+            activate NucleusAPI
+            NucleusAPI --> IntegrationApp : 4a. Stream asset file
+            deactivate NucleusAPI
+            IntegrationApp -> VimeoAPI : 5a. Upload video file via TUS with metadata
+            activate VimeoAPI
+            VimeoAPI --> IntegrationApp : 6a. Confirm upload & processing started
+            deactivate VimeoAPI
+        else **Option B: Pull via MRSS/Direct URL Ingestion**
+            'Assuming Nucleus provides a stable direct URL or MRSS feed that Vimeo can ingest
+            IntegrationApp -> VimeoAPI : 4b. Request Vimeo to ingest asset from Nucleus URL/MRSS
+            activate VimeoAPI
+            VimeoAPI -> NucleusAPI : 5b. Vimeo pulls asset from Nucleus URL/MRSS
+            activate NucleusAPI
+            NucleusAPI --> VimeoAPI : 6b. Provide asset stream
+            deactivate NucleusAPI
+            VimeoAPI --> IntegrationApp : 7b. Confirm ingestion & processing started
+            deactivate VimeoAPI
+        end
+    end
+
+    IntegrationApp -> VimeoAPI : 8. Apply additional Vimeo-specific metadata/settings
+    activate VimeoAPI
+    VimeoAPI --> IntegrationApp : 9. Confirm metadata update
+    deactivate VimeoAPI
+end loop
+
+IntegrationApp --> Admin : Sync completed / Report status
+deactivate IntegrationApp
+
+@enduml
